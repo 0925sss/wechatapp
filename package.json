@@ -1,9 +1,9 @@
 {
-  "name": "my-project",
+  "name": "wechatapp",
   "version": "1.0.0",
   "mpvueTemplateProjectVersion": "0.1.0",
-  "description": "1",
-  "author": "1",
+  "description": "A Mpvue project",
+  "author": "Your Name <you@example.com>",
   "private": true,
   "scripts": {
     "dev:wx": "node build/dev-server.js wx",

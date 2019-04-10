@@ -1,6 +1,6 @@
-# my-project
+# wechatapp
 
-> 1
+> A Mpvue project
 
 ## Build Setup
 
