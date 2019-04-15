@@ -1,131 +1,81 @@
 <template>
-  <div @click="clickHandle">
-<i-panel title="吃货推荐">
-      <view class="top-padding">
-      <i-card title="良品铺子" extra="零食" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
-        <view slot="content">好多不错的零食</view>
-        <view slot="footer">后街1-22</view>
-      </i-card>
-      <view class="top-padding"></view>
-      <i-card title="卡片标题" i-class="top-padding" extra="额外内容" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
-        <view slot="content">内容不错</view>
-        <view slot="footer">尾部内容</view>
-      </i-card>
-      <view class="top-padding"></view>
-      <i-card title="卡片标题" i-class="top-padding" extra="额外内容" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
-        <view slot="content">内容不错</view>
-        <view slot="footer">尾部内容</view>
-      </i-card>
-      <view class="top-padding"></view>
-      <i-card title="卡片标题" i-class="top-padding" extra="额外内容" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
-        <view slot="content">内容不错</view>
-        <view slot="footer">尾部内容</view>
-      </i-card>
-      <view class="top-padding"></view>
-      <i-card title="卡片标题" i-class="top-padding" extra="额外内容" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
-        <view slot="content">内容不错</view>
-        <view slot="footer">尾部内容</view>
-      </i-card>
-      <view class="top-padding"></view>
-    </view>
-    </i-panel>
+  <div >
+    <map
+  id="map"
+  longitude="114.340713"
+  latitude="30.58292"
+  scale="14"
+  :controls="controls"
+  @controltap="controltap"
+  :markers="markers"
+  @markertap="markertap"
+  :polyline="polyline"
+  @regionchange="regionchange"
+  show-location
+  style="width: 100%; height: 300px;"
+></map>
   </div>
 </template>
 
 <script>
-import card from '@/components/card'
 
 export default {
   data () {
     return {
-      motto: 'Hello miniprograme',
-      userInfo: {
-        nickName: 'mpvue',
-        avatarUrl: 'http://mpvue.com/assets/logo.png'
-      }
+      markers: [{
+      iconPath: '/static/grid/location.png',
+      id: 0,
+      latitude: 23.099994,
+      longitude: 113.324520,
+      width: 50,
+      height: 50
+    }],
+    polyline: [{
+      points: [{
+        longitude: 113.3245211,
+        latitude: 23.10229
+      }, {
+        longitude: 113.324520,
+        latitude: 23.21229
+      }],
+      color: '#FF0000DD',
+      width: 2,
+      dottedLine: true
+    }],
+    controls: [{
+      id: 1,
+      iconPath: '/static/grid/others.png',
+      position: {
+        left: 0,
+        top: 300 - 50,
+        width: 50,
+        height: 50
+      },
+      clickable: true
+    }]
     }
   },
+      
 
   components: {
-    card
   },
 
   methods: {
-    bindViewTap () {
-      const url = '../logs/main'
-      if (mpvuePlatform === 'wx') {
-        mpvue.switchTab({ url })
-      } else {
-        mpvue.navigateTo({ url })
-      }
-    },
-    clickHandle (ev) {
-      console.log('clickHandle:', ev)
-      // throw {message: 'custom test'}
-    }
+    regionchange(e) {
+    console.log(e.type)
+  },
+  markertap(e) {
+    console.log(e.markerId)
+  },
+  controltap(e) {
+    console.log(e.controlId)
+  }    
   },
 
   created () {
-    // let app = getApp()
   }
 }
 </script>
 
-<style scoped>
-div >>> .no-border {
-  border-width: 0pt;
-}
-.top-padding {
-  padding-top: 50rpx;
-}
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
-
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 150px;
-}
-
-.form-control {
-  display: block;
-  padding: 0 12px;
-  margin-bottom: 5px;
-  border: 1px solid #ccc;
-}
-.all{
-  width:7.5rem;
-  height:1rem;
-  background-color:blue;
-}
-.all:after{
-  display:block;
-  content:'';
-  clear:both;
-}
-.left{
-  float:left;
-  width:3rem;
-  height:1rem;
-  background-color:red;
-}
-
-.right{
-  float:left;
-  width:4.5rem;
-  height:1rem;
-  background-color:green;
-}
+<style>
 </style>

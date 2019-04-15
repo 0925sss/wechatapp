@@ -100,12 +100,7 @@ export default {
   },
 
   created () {
-    //cloud functions
-    wx.cloud.callFunction({ name: 'user' }).then(
-      res => {console.log(res)}
-)
-
-
+    // let app = getApp()
   }
 }
 </script>
