@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "我的",
+  "navigationBarTitleText": "租车",
   "usingComponents": {
       "i-button": "../../../static/dist/button/index",
       "i-card": "../../../static/dist/card/index",
@@ -10,6 +10,7 @@
       "i-grid-label": "../../../static/dist/grid-label/index",
       "i-notice-bar": "../../../static/dist/notice-bar/index",
       "i-tabs": "../../../static/dist/tabs/index",
-      "i-tab": "../../../static/dist/tab/index"
+      "i-tab": "../../../static/dist/tab/index",
+      "i-input": "../../../static/dist/input/index"
   }
 }

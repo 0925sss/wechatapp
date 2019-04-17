@@ -24,20 +24,20 @@
       "iconPath": "static/tabs/homepage.png",
       "selectedIconPath": "static/tabs/homepage-active.png"
     }, {
-      "text": "自驾租车",
+      "text": "车型查询",
       "pagePath": "pages/nearby/main",
       "iconPath": "static/tabs/cab.png",
       "selectedIconPath": "static/tabs/cab-active.png"
     },{
-      "text": "车型查询",
+      "text": "导航",
       "pagePath": "pages/serach/main",
-      "iconPath": "static/tabs/search.png",
-      "selectedIconPath": "static/tabs/search-active.png"
-    },{
-      "text": "附近网点",
-      "pagePath": "pages/logs/main",
       "iconPath": "static/tabs/nearby.png",
       "selectedIconPath": "static/tabs/nearby-active.png"
+    },{
+      "text": "我的",
+      "pagePath": "pages/logs/main",
+      "iconPath": "static/tabs/mine.png",
+      "selectedIconPath": "static/tabs/mine-active.png"
     }]
   }
 }
