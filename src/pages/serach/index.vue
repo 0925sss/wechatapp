@@ -55,7 +55,11 @@ export default {
     }]
     }
   },
-      
+  
+  onLoad (option){
+    this.list = require(option.type + '.json')
+    console.log(this.serach)
+  },
 
   components: {
   },

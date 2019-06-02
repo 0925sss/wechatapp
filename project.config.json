@@ -13,7 +13,7 @@
 	"appid": "wx7229bd8e4d96fafc",
 	"projectname": "wechatapp",
 	"libVersion": "2.6.6",
-	"cloudfunctionRoot": "/functions/",
+	"cloudfunctionRoot": "functions/",
 	"condition": {
 		"search": {
 			"current": -1,
