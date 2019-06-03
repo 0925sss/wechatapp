@@ -63,7 +63,6 @@
       <view class="top-padding"></view>
     </view>
     </i-panel>
-    <button @click="goSerach()">跳转</button>
   </div>
 </template>
 
@@ -86,10 +85,6 @@ export default {
   },
 
   methods: {
-    goSerach(){
-      const url = '../serach/main'
-      wx.navigateTo({ url });
-    }
   },
 
   created () {

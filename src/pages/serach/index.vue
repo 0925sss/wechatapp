@@ -1,79 +1,89 @@
 <template>
-  <div >
+  <div style="width: 100%; height: 100%;">
     <map
-  id="map"
-  longitude="114.340713"
-  latitude="30.58292"
-  scale="14"
-  :controls="controls"
-  @controltap="controltap"
-  :markers="markers"
-  @markertap="markertap"
-  :polyline="polyline"
-  @regionchange="regionchange"
-  show-location
-  style="width: 100%; height: 500px;"
-></map>
+      id="map"
+      :scale="scale"
+      :controls="controls"
+      @controltap="controltap($event)"
+      :markers="markers"
+      :include-points="markers"
+      @markertap="markertap($event)"
+      show-location
+      style="width: 100%; height: 100%;"
+    ></map>
   </div>
 </template>
 
 <script>
-
 export default {
   data () {
     return {
-      markers: [{
-      iconPath: '/static/grid/location.png',
-      id: 0,
-      latitude: 23.099994,
-      longitude: 113.324520,
-      width: 50,
-      height: 50
-    }],
-    polyline: [{
-      points: [{
-        longitude: 113.3245211,
-        latitude: 23.10229
+      type:1,
+      scale:16,
+      markers: require("@/data/top.json").map((value) => {
+        value.label = {}
+        value.label.content = value.name
+        value.label.color = '#FF7F00'
+        value.label.fontSize = 14
+        console.log(value)
+        return value
+        }),
+      controls: [{
+        id: 1,
+        iconPath: '/static/grid/f.png',
+        position: {
+          left: 10,
+          top: 10,
+          width: 30,
+          height: 30
+        },
+        clickable: true
       }, {
-        longitude: 113.324520,
-        latitude: 23.21229
-      }],
-      color: '#FF0000DD',
-      width: 2,
-      dottedLine: true
-    }],
-    controls: [{
-      id: 1,
-      iconPath: '/static/grid/others.png',
-      position: {
-        left: 0,
-        top: 300 - 50,
-        width: 50,
-        height: 50
-      },
-      clickable: true
-    }]
+        id: 2,
+        iconPath: '/static/grid/s.png',
+        position: {
+          left: 10,
+          top: 50,
+          width: 30,
+          height: 30
+        },
+        clickable: true
+      }, {
+        id: 3,
+        iconPath: '/static/grid/d.png',
+        position: {
+          left: 10,
+          top: 90,
+          width: 30,
+          height: 30
+        },
+        clickable: true
+      }]
     }
-  },
-  
-  onLoad (option){
-    this.list = require(option.type + '.json')
-    console.log(this.serach)
-  },
-
-  components: {
   },
 
   methods: {
-    regionchange(e) {
-    console.log(e.type)
-  },
-  markertap(e) {
-    console.log(e.markerId)
-  },
-  controltap(e) {
-    console.log(e.controlId)
-  }    
+    markertap(event) {
+      console.log(event)
+    },
+    controltap(event) {
+      if (event.mp.controlId == 1) {
+        this.scale += 1
+      } if (event.mp.controlId == 2) {
+        this.scale -= 1
+      } else {
+        this.markers = require("@/data/" + this.type + ".json").map((value) => {
+          value.label = {}
+          value.label.content = value.name
+          value.label.color = '#FF7F00'
+          value.label.fontSize = 14
+          console.log(value)
+          return value
+        })
+        this.type = this.type + 1;
+        if (this.type == 6) this.type = 1
+      }
+    }
   },
 
   created () {
@@ -82,4 +92,7 @@ export default {
 </script>
 
 <style>
+body, html {
+  height:100%
+}
 </style>
