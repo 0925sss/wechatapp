@@ -1,35 +1,5 @@
 <template>
-  <div @click="clickHandle"><i-notice-bar icon="systemprompt" loop>
-    湖大租车APP上线了！！！
-    </i-notice-bar>
-    <i-grid i-class="no-border">
-    <i-grid-item @click="tozhishi">
-        <i-grid-icon>
-            <image src="/static/grid/delivery.png" />
-        </i-grid-icon>
-        <i-grid-label>汽车知识</i-grid-label>
-    </i-grid-item>
-    <i-grid-item @click="totuijian">
-        <i-grid-icon>
-            <image src="/static/grid/store.png" />
-        </i-grid-icon>
-        <i-grid-label>车型推荐</i-grid-label>
-    </i-grid-item>
-</i-grid>
-    <i-grid i-class="no-border">
-    <i-grid-item @click="topaizi">
-        <i-grid-icon>
-            <image src="/static/grid/bargain.png" />
-        </i-grid-icon>
-        <i-grid-label>租车品牌</i-grid-label>
-    </i-grid-item>
-    <i-grid-item @click="toSerach">
-        <i-grid-icon>
-            <image src="/static/grid/gps.png" />
-        </i-grid-icon>
-        <i-grid-label>导航</i-grid-label>
-    </i-grid-item>
-</i-grid>
+  <div @click="clickHandle">
 <i-panel title="车辆推荐">
       <view class="top-padding">
       <i-card title="宝马740Li · 顶级旗舰" extra="轿车" thumb="cloud://lx-092780.6c78-lx-092780/3dcf8f8de806b1fb2dfe9b7437856d53.jpg">
@@ -71,26 +41,6 @@ export default {
   },
 
   methods: {
-    toSerach () {
-      wx.navigateTo({
-        url: 'serach/main'
-      })
-    },
-    topaizi () {
-      wx.navigateTo({
-        url: 'paizi/main'
-      })
-    },
-    totuijian () {
-      wx.navigateTo({
-        url: 'tuijian/main'
-      })
-    },
-    tozhishi () {
-      wx.navigateTo({
-        url: 'zhishi/main'
-      })
-    }
   },
 
   created () {
