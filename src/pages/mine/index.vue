@@ -1,31 +1,25 @@
 <template>
-  <div>
-    <view class="userinfo">
+  <div @click="clickHandle">
+  <view class="userinfo">
     <view class="userinfo-avatar">
     <open-data type="userAvatarUrl"></open-data>
     </view>
     <open-data type="userNickName"></open-data>
-    </view>
-    <i-cell-group>
-    <i-cell title="我的收藏" is-link url="/pages/logs/main"></i-cell>
-    <i-cell title="接收通知">
-        <switch slot="footer" checked />
-    </i-cell>
-</i-cell-group>
+  </view>
+
+  <i-button type="ghost" @click="handleClick"  size="large">点个赞支持一下吧！</i-button>
+  <i-toast id="toast" />
   </div>
 </template>
 
 <script>
+const { $Toast } = require('../../../static/dist/base/index');
 import card from '@/components/card'
+
 
 export default {
   data () {
     return {
-      motto: 'Hello miniprograme',
-      userInfo: {
-        nickName: 'mpvue',
-        avatarUrl: 'http://mpvue.com/assets/logo.png'
-      }
     }
   },
 
@@ -34,19 +28,14 @@ export default {
   },
 
   methods: {
-    bindViewTap () {
-      const url = '../logs/main'
-      if (mpvuePlatform === 'wx') {
-        mpvue.switchTab({ url })
-      } else {
-        mpvue.navigateTo({ url })
-      }
+    handleClick  (){
+        $Toast({
+            content: '万分感谢',
+            type: 'success'
+        });
     },
-    clickHandle (ev) {
-      console.log('clickHandle:', ev)
-      // throw {message: 'custom test'}
-    }
   },
+  
 
   created () {
     // let app = getApp()

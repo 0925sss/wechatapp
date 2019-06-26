@@ -2,7 +2,7 @@
   "pages": [
     "pages/index/main",
     "pages/counter/main",
-    "pages/logs/main",
+    "pages/mine/main",
     "pages/serach/main"
   ],
   "window": {
@@ -29,7 +29,7 @@
       "selectedIconPath": "static/tabs/nearby-active.png"
     },{
       "text": "我的",
-      "pagePath": "pages/logs/main",
+      "pagePath": "pages/mine/main",
       "iconPath": "static/tabs/mine.png",
       "selectedIconPath": "static/tabs/mine-active.png"
     }]
