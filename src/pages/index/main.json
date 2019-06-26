@@ -1,5 +1,5 @@
 {
-    "navigationBarTitleText": "租车",
+    "navigationBarTitleText": "湖大租车小程序",
     "usingComponents": {
         "i-button": "../../../static/dist/button/index",
         "i-card": "../../../static/dist/card/index",
