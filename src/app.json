@@ -3,7 +3,6 @@
     "pages/index/main",
     "pages/counter/main",
     "pages/logs/main",
-    "pages/nearby/main",
     "pages/serach/main"
   ],
   "window": {
@@ -24,11 +23,6 @@
       "iconPath": "static/tabs/homepage.png",
       "selectedIconPath": "static/tabs/homepage-active.png"
     }, {
-      "text": "车型查询",
-      "pagePath": "pages/nearby/main",
-      "iconPath": "static/tabs/cab.png",
-      "selectedIconPath": "static/tabs/cab-active.png"
-    },{
       "text": "导航",
       "pagePath": "pages/serach/main",
       "iconPath": "static/tabs/nearby.png",
