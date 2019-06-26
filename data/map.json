@@ -1,0 +1,7 @@
+[
+    {"id":1,"name":"神州租车","address":"武昌火车站","img":"/static/images/shen.jpg","type":1,"latitude": 30.576413,"longitude": 114.339437},
+    {"id":2,"name":"一嗨租车","address":"湖大琴园店","img":"/static/images/yi.jpg","type":4,"latitude": 30.579604,"longitude": 114.338552},
+    {"id":3,"name":"大方租车","address":"中北路店","img":"/static/images/da.jpg","type":3,"latitude": 30.573291,"longitude": 114.333172},
+    {"id":4,"name":"首汽瑞卡租车","address":"青鱼嘴地铁站送车点","img":"/static/images/shou.jpg","type":3,"latitude": 30.575157,"longitude": 114.332303},
+    {"id":5,"name":"神州租车","address":"徐东凯旋门服务点","img":"/static/images/shen.jpg","type":5,"latitude": 30.579535,"longitude": 114.330876}
+]

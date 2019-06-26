@@ -12,7 +12,7 @@
 	"compileType": "miniprogram",
 	"appid": "wx7229bd8e4d96fafc",
 	"projectname": "wechatapp",
-	"libVersion": "2.6.6",
+	"libVersion": "2.7.2",
 	"cloudfunctionRoot": "functions/",
 	"condition": {
 		"search": {
